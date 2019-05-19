@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Friend Finder</title>
     <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link
       rel="stylesheet"
@@ -40,7 +40,7 @@
             placeholder="link a picture of you here"
           />
         </div>
-        <h2>Answer all the questions below from a scale of one to 5</h2>
+        <h2>Answer all the questions below from a scale of one to five</h2>
         <hr />
         <h4>Question 1</h4>
         <h5>You love social events.</h5>
@@ -164,6 +164,46 @@
     <script>
       $("#submitBtn").on("click", e => {
         e.preventDefault();
+
+        function checkForm() {
+          let valid = true;
+          if (!$("#name") && !$("#profilePhoto")) {
+			alert("add a name and/photo please")
+			return (valid = false);
+          }
+          $(".custom-select").each(function() {
+            if ($(this).val() === "") {
+				alert("answer all questions please")
+				return (valid = false);
+            }
+          });
+          return valid;
+        }
+
+        if (checkForm()) {
+          const friendData = {
+            name: $("#name").val(),
+            img: $("profilePhoto").val(),
+            answers: [
+              $("q1").val(),
+              $("q2").val(),
+              $("q3").val(),
+              $("q4").val(),
+              $("q5").val(),
+              $("q6").val(),
+              $("q7").val(),
+              $("q8").val(),
+              $("q9").val(),
+              $("q10").val()
+            ]
+		  };
+		  
+		  // $.post("/api/friends",friendData).then(data => {
+			
+		  // })
+        }
+
+        console.log(checkForm());
       });
     </script>
   </body>

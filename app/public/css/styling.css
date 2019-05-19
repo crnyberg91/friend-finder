@@ -10,6 +10,10 @@ a:hover {
   text-decoration: none;
 }
 
+select:hover {
+    background-color: #7fdd9b;
+}
+
 h4 {
   padding-top: 2rem;
 }
