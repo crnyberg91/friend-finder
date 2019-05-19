@@ -5,10 +5,156 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+
+		<link rel="stylesheet" type="text/css" href="css/styling.css" />
+
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			crossorigin="anonymous"
+		></script>
 	</head>
 	<body>
-		<div class="row">
+		<div class="jumbotron container">
 			<h1 class="head">survey</h1>
 		</div>
+		<hr />
+		<div class="form-container container">
+			<form class="survey-form">
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input class="form-control" id="name" placeholder="Enter name here" />
+				</div>
+				<div class="form-group">
+					<label for="profilePhoto">A picture of yourself</label>
+					<input class="form-control" id="profilePhoto" placeholder="link a picture of you here" />
+				</div>
+				<h2>Answer all the questions below from a scale of one to 5</h2>
+				<hr>
+				<h4>Question 1</h4>
+				<h5>You love social events.</h5>
+				<select class="custom-select" id="q1">
+					<option value="">between 1-5</option>
+					<option value="1">One(strongly disagree)</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+					<option value="4">four</option>
+					<option value="5">five (strongly agree)</option>
+				</select>
+
+				<h4>Question 2</h4>
+				<h5>You prefer quiet ights at home.</h5>
+				<select class="custom-select" id="q2">
+					<option value="">between 1-5</option>
+					<option value="1">One(strongly disagree)</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+					<option value="4">four</option>
+					<option value="5">five (strongly agree)</option>
+				</select>
+
+				<h4>Question 3</h4>
+				<h5>You do not like drinking, and when others around you do.</h5>
+				<select class="custom-select" id="q3">
+					<option value="">between 1-5</option>
+					<option value="1">One(strongly disagree)</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+					<option value="4">four</option>
+					<option value="5">five (strongly agree)</option>
+				</select>
+
+				<h4>Question 4</h4>
+				<h5>You love to daydream.</h5>
+				<select class="custom-select" id="q4">
+					<option value="">between 1-5</option>
+					<option value="1">One(strongly disagree)</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+					<option value="4">four</option>
+					<option value="5">five (strongly agree)</option>
+				</select>
+
+				<h4>Question 5</h4>
+				<h5>Sporting events and sports in general are not your cup of tea.</h5>
+				<select class="custom-select" id="q5">
+					<option value="">between 1-5</option>
+					<option value="1">One(strongly disagree)</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+					<option value="4">four</option>
+					<option value="5">five (strongly agree)</option>
+				</select>
+
+				<h4>Question 6</h4>
+				<h5>You would rather read a book than watch a movie.</h5>
+				<select class="custom-select" id="q6">
+					<option value="">between 1-5</option>
+					<option value="1">One(strongly disagree)</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+					<option value="4">four</option>
+					<option value="5">five (strongly agree)</option>
+				</select>
+
+				<h4>Question 7</h4>
+				<h5>You find comics and videogames too childish.</h5>
+				<select class="custom-select" id="q7">
+					<option value="">between 1-5</option>
+					<option value="1">One(strongly disagree)</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+					<option value="4">four</option>
+					<option value="5">five (strongly agree)</option>
+				</select>
+
+				<h4>Question 8</h4>
+				<h5>You would choose nature over the city life.</h5>
+				<select class="custom-select" id="q8">
+					<option value="">between 1-5</option>
+					<option value="1">One(strongly disagree)</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+					<option value="4">four</option>
+					<option value="5">five (strongly agree)</option>
+				</select>
+
+				<h4>Question 9</h4>
+				<h5>You are more of a night person than a morning person.</h5>
+				<select class="custom-select" id="q9">
+					<option value="">between 1-5</option>
+					<option value="1">One(strongly disagree)</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+					<option value="4">four</option>
+					<option value="5">five (strongly agree)</option>
+				</select>
+
+				<h4>Question 10</h4>
+				<h5>you prefer a night club over a bar.</h5>
+				<select class="custom-select" id="q10">
+					<option value="">between 1-5</option>
+					<option value="1">One(strongly disagree)</option>
+					<option value="2">Two</option>
+					<option value="3">Three</option>
+					<option value="4">four</option>
+					<option value="5">five (strongly agree)</option>
+				</select>
+				<button type="submit" class="btn btn-primary btn-lg btn-block" id="submitBtn">SUBMIT</button>
+			</form>
+		</div>
+
+		<script>
+			$("#submitBtn").on("click", e => {
+				e.preventDefault();
+			});
+		</script>
 	</body>
 </html>
