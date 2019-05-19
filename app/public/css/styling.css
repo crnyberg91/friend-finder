@@ -9,3 +9,13 @@ a {
 a:hover {
     text-decoration: none;
 }
+
+h4 {
+    padding-top:2rem;
+}
+
+h5 {
+    padding-top:.5rem;
+}
+
+
