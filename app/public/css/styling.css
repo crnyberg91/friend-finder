@@ -1,0 +1,11 @@
+.jumbotron {
+    background-color: #7fdd9b
+}
+
+a {
+    margin: 1rem;
+}
+
+a:hover {
+    text-decoration: none;
+}
