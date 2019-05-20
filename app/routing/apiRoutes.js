@@ -1,10 +1,15 @@
 const path = require("path");
-// const friends = path.json(__dirname, "app/data/friendsList.json")
+const friendsList = require("../data/friendsList.json");
 
 module.exports = app => {
+  app.get("/api/friends", (req, res) => {
+    res.json(friendsList);
+  });
 
-	// app.get("/api/friends", (req, res) => {
-	// 	return app.get(friends)
-    // });
-    
+  app.post("/api/friends", (req, res) => {
+    const friendData = req.body;
+
+    friendsList.push(friendData);
+    res.end(); //send closest match function
+  });
 };

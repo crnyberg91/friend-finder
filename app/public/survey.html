@@ -168,13 +168,13 @@
         function checkForm() {
           let valid = true;
           if (!$("#name") && !$("#profilePhoto")) {
-			alert("add a name and/photo please")
-			return (valid = false);
+            alert("add a name and/photo please");
+            return (valid = false);
           }
           $(".custom-select").each(function() {
             if ($(this).val() === "") {
-				alert("answer all questions please")
-				return (valid = false);
+              alert("answer all questions please");
+              return (valid = false);
             }
           });
           return valid;
@@ -182,25 +182,25 @@
 
         if (checkForm()) {
           const friendData = {
-            name: $("#name").val(),
-            img: $("profilePhoto").val(),
+            name: $("#name").val().trim(),
+            img: $("#profilePhoto").val().trim(),
             answers: [
-              $("q1").val(),
-              $("q2").val(),
-              $("q3").val(),
-              $("q4").val(),
-              $("q5").val(),
-              $("q6").val(),
-              $("q7").val(),
-              $("q8").val(),
-              $("q9").val(),
-              $("q10").val()
+              $("#q1").val(),
+              $("#q2").val(),
+              $("#q3").val(),
+              $("#q4").val(),
+              $("#q5").val(),
+              $("#q6").val(),
+              $("#q7").val(),
+              $("#q8").val(),
+              $("#q9").val(),
+              $("#q10").val()
             ]
-		  };
-		  
-		  // $.post("/api/friends",friendData).then(data => {
-			
-		  // })
+          };
+
+          $.post("/api/friends", friendData).then(data => {
+            console.log(data);
+          });
         }
 
         console.log(checkForm());
