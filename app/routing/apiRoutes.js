@@ -1,17 +1,33 @@
 const path = require("path");
 const friendsList = require("../data/friendsList.json");
-const closestMatch = require("../data/friends.js");
 module.exports = app => {
   app.get("/api/friends", (req, res) => {
     res.json(friendsList);
   });
 
   app.post("/api/friends", (req, res) => {
-    const friendData = req.body;
+    const userData = req.body;
 
-    closestMatch(friendData, friendsList);
-    friendsList.push(friendData);
-    
-    res.end(); //send closest match function
+      let closest = 100;
+      let bestMatch = 0;
+  
+      for (i = 0; i < friendsList.length; i++) {
+        let total = 0;
+        // console.log(i)
+        for (n = 0; n < friendsList[i].answers.length; n++) {
+          // console.log(parseInt(data[i].answers[n]), parseInt(user.answers[n]))
+          total += Math.abs(parseInt(friendsList[i].answers[n] - userData.answers[n]));
+        };
+        // console.log(total);
+  
+        if(total < closest) {
+          closest = total;
+          bestMatch = i;
+        };
+      };
+
+    res.send({name: friendsList[bestMatch].name, img: friendsList[bestMatch].img});
+
+    friendsList.push(userData);
   });
 };
