@@ -1,24 +1,27 @@
 .jumbotron {
-    background-color: #7fdd9b
+  background-color: #7fdd9b;
 }
 
 a {
-    margin: 1rem;
+  margin: 1rem;
 }
 
 a:hover {
-    text-decoration: none;
+  text-decoration: none;
+}
+
+select:hover {
+    background-color: #7fdd9b;
 }
 
 h4 {
-    padding-top:2rem;
+  padding-top: 2rem;
 }
 
 h5 {
-    padding-top:.5rem;
+  padding-top: 0.5rem;
 }
 
 #submitBtn {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
-
