@@ -1,6 +1,8 @@
+
+//function runs on click
 $("#submitBtn").on("click", e => {
     e.preventDefault();
-
+//checks if all fields have a value
     function checkForm() {
       let valid = true;
       if (!$("#name") && !$("#profilePhoto")) {
@@ -15,7 +17,7 @@ $("#submitBtn").on("click", e => {
       });
       return valid;
     }
-
+//if checkForm function is truthy, the values provided by user are compiled into a new object
     if (checkForm()) {
       const friendData = {
         name: $("#name")
@@ -37,7 +39,7 @@ $("#submitBtn").on("click", e => {
           $("#q10").val()
         ]
       };
-
+//new user object is posted to the current data of users, through an api route
       $.post("/api/friends", friendData).then(data => {
         $("#bestName").text(data.name);
         $("#bestImg").attr("src", data.img);

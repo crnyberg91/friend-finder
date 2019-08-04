@@ -1,10 +1,11 @@
 const path = require("path");
 const friendsList = require("../data/friendsList.json");
 module.exports = app => {
+  //api route to display friendsList as json
   app.get("/api/friends", (req, res) => {
     res.json(friendsList);
   });
-
+  //api route that, when ran, will compare the new user to the current list of friends and send the "best match" friend to the client
   app.post("/api/friends", (req, res) => {
     const userData = req.body;
 

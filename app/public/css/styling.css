@@ -1,3 +1,7 @@
+body{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .jumbotron {
   background-color: #7fdd9b;
 }
